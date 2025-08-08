@@ -17,14 +17,14 @@ read INPUT
 
 # if input is empty open today's note
 if [[ -z $INPUT ]]; then
-    vim ~/.jrnl/$TODAY && exit
+    $EDITOR ~/.jrnl/$TODAY && exit
 # if input is not empty and a note exists for that day then open it
 elif [[ -e ~/.jrnl/$INPUT ]]; then
-    vim ~/.jrnl/$INPUT && exit
+    $EDITOR ~/.jrnl/$INPUT && exit
 elif [[ -e ~/.jrnl/$YEAR$INPUT ]]; then
-    vim ~/.jrnl/$YEAR$INPUT && exit
+    $EDITOR ~/.jrnl/$YEAR$INPUT && exit
 elif [[ -e ~/.jrnl/$YEAR$MONTH$INPUT ]]; then
-    vim ~/.jrnl/$YEAR$MONTH$INPUT && exit
+    $EDITOR ~/.jrnl/$YEAR$MONTH$INPUT && exit
 else
     echo "No Note Found" && exit
 fi
